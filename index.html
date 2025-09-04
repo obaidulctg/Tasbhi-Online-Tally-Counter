@@ -27,12 +27,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* Variables for easy theme adjustments with a new color palette */
         :root {
             --bg-color: #0d1117;
             --text-color: #e6e6e6;
-            --primary-accent: #0077b6; /* A deep, professional blue */
-            --secondary-accent: #00b4d8; /* A vibrant teal for arrows */
+            --primary-accent: #0077b6;
+            --secondary-accent: #00b4d8;
             --button-bg: #21262d;
             --button-text: #e6e6e6;
             --button-hover: #343a42;
@@ -40,15 +39,19 @@
             --border-radius-button: 20px;
         }
 
-        /* Keyframes for the rainbow animation */
+        /* Improved Keyframes for Smoother Color Blending */
         @keyframes rainbow-border {
-            0% { border-color: #FF0000; }
-            15% { border-color: #FF7F00; }
-            30% { border-color: #FFFF00; }
-            45% { border-color: #00FF00; }
-            60% { border-color: #0000FF; }
-            75% { border-color: #4B0082; }
-            100% { border-color: #9400D3; }
+            0%   { border-color: #FF6347; } /* Tomato */
+            10%  { border-color: #FFD700; } /* Gold */
+            20%  { border-color: #7FFF00; } /* Chartreuse */
+            30%  { border-color: #00FFFF; } /* Cyan */
+            40%  { border-color: #1E90FF; } /* Dodger Blue */
+            50%  { border-color: #9932CC; } /* Dark Orchid */
+            60%  { border-color: #FF1493; } /* Deep Pink */
+            70%  { border-color: #FF4500; } /* Orange Red */
+            80%  { border-color: #32CD32; } /* Lime Green */
+            90%  { border-color: #4682B4; } /* Steel Blue */
+            100% { border-color: #FF6347; } /* Return to start for seamless loop */
         }
 
         body {
@@ -69,30 +72,29 @@
             text-align: center;
         }
 
-        /* Top Controls Bar */
         .top-controls {
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 100%;
-            max-width: 450px; /* Slightly wider for better spacing */
+            max-width: 450px;
             padding: 20px 0;
-            gap: 15px; /* Increased gap */
+            gap: 15px;
         }
 
         .control-button {
             background-color: var(--button-bg);
             color: var(--button-text);
             border: 2px solid transparent;
-            padding: 12px 22px; /* Increased padding for better tap size */
-            font-size: 1.1rem; /* Slightly larger font */
+            padding: 12px 22px;
+            font-size: 1.1rem;
             font-weight: 500;
             border-radius: var(--border-radius-button);
             cursor: pointer;
             transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
             flex-grow: 1;
             max-width: 140px;
-            animation: rainbow-border 8s linear infinite;
+            animation: rainbow-border 10s linear infinite; /* Longer duration for smoother transition */
         }
 
         .control-button:hover {
@@ -117,7 +119,6 @@
             margin-left: 5px;
         }
 
-        /* Main Counter Display */
         .counter-display {
             font-size: 15em;
             font-weight: 300;
@@ -131,13 +132,12 @@
             transition: font-size 0.3s ease, transform 0.1s ease;
         }
         
-        /* Action Buttons (Circles) */
         .action-buttons {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Increased space between circles */
-            margin-bottom: 25px; /* Increased space from footer */
+            gap: 20px;
+            margin-bottom: 25px;
         }
 
         .large-circle-button, .small-circle-button {
@@ -150,18 +150,18 @@
             transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
             border: 4px solid transparent;
-            animation: rainbow-border 8s linear infinite;
+            animation: rainbow-border 10s linear infinite;
         }
 
         .large-circle-button {
-            width: 220px; /* Larger main button */
+            width: 220px;
             height: 220px;
         }
 
         .small-circle-button {
-            width: 80px; /* Larger mini button */
+            width: 80px;
             height: 80px;
-            margin-top: -40px; /* Adjust overlap */
+            margin-top: -40px;
             position: relative;
             z-index: 10;
         }
@@ -176,7 +176,6 @@
             box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
         }
 
-        /* Arrow styles (using borders for simplicity) */
         .arrow-up, .arrow-down {
             border: solid var(--secondary-accent);
             border-width: 0 8px 8px 0;
@@ -190,11 +189,10 @@
 
         .arrow-down {
             transform: rotate(45deg);
-            padding: 10px; /* Larger arrow in the small button */
+            padding: 10px;
             border-width: 0 6px 6px 0;
         }
 
-        /* Footer */
         .footer {
             padding: 15px;
             font-size: 0.8em;
@@ -209,7 +207,6 @@
             text-decoration: underline;
         }
 
-        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             .counter-display { font-size: 20vw; }
             .large-circle-button { width: 180px; height: 180px; }
